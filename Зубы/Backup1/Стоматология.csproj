@@ -1,0 +1,537 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DC599D26-C4F8-4264-9F7D-16704594E1FF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Стамотология</RootNamespace>
+    <AssemblyName>Стамотология</AssemblyName>
+    <ApplicationIcon>Temporary-tooth-32x32.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CarlosAg.ExcelXmlWriter, Version=1.0.0.6, Culture=neutral" />
+    <Reference Include="ClassLibrary1, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ClassLibrary1\bin\Debug\ClassLibrary1.dll</HintPath>
+    </Reference>
+    <Reference Include="DantistLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Библиотека для стоматологии\DantistLibrary\DantistLibrary\bin\Release\DantistLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Office.Interop.Word, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\ConfigFile.cs" />
+    <Compile Include="Classes\ConnectionDB.cs" />
+    <Compile Include="Classes\ConvertTo.cs" />
+    <Compile Include="Classes\Crypto.cs" />
+    <Compile Include="Classes\DataTableIndication.cs" />
+    <Compile Include="Classes\DeleteЛьготнаяКатегория.cs" />
+    <Compile Include="Classes\DeleteЛьготник.cs" />
+    <Compile Include="Classes\DeleteУслугиПоДоговору.cs" />
+    <Compile Include="Classes\DisplayДоговор.cs" />
+    <Compile Include="Classes\EncryptMessage.cs" />
+    <Compile Include="Classes\Esculap.cs" />
+    <Compile Include="Classes\GetЛьготник.cs" />
+    <Compile Include="Classes\Hospital.cs" />
+    <Compile Include="Classes\ICommand.cs" />
+    <Compile Include="Classes\Info.cs" />
+    <Compile Include="Classes\InsertEsculap.cs" />
+    <Compile Include="Classes\InsertHospital.cs" />
+    <Compile Include="Classes\InsertАкт.cs" />
+    <Compile Include="Classes\InsertАктДопСоглашениеЗакрытый.cs" />
+    <Compile Include="Classes\InsertАктДопСоглашения.cs" />
+    <Compile Include="Classes\InsertБухгалтер.cs" />
+    <Compile Include="Classes\InsertВрач.cs" />
+    <Compile Include="Classes\InsertДоговор.cs" />
+    <Compile Include="Classes\InsertЛьготник.cs" />
+    <Compile Include="Classes\InsertПоликлинника.cs" />
+    <Compile Include="Classes\ListRegion.cs" />
+    <Compile Include="Classes\NullАктВыполненныхРабот.cs" />
+    <Compile Include="Classes\Query.cs" />
+    <Compile Include="Classes\InsertЛьготьнаяКатегория.cs" />
+    <Compile Include="Classes\Receiver.cs" />
+    <Compile Include="Classes\ReestrContract.cs" />
+    <Compile Include="Classes\ReestrPrintПроектДоговоров.cs" />
+    <Compile Include="Classes\ReestrПроектДоговорр.cs" />
+    <Compile Include="Classes\ShortString.cs" />
+    <Compile Include="Classes\TableЛьготнаяКатегория.cs" />
+    <Compile Include="Classes\UnloadDate.cs" />
+    <Compile Include="Classes\UnloadReestr.cs" />
+    <Compile Include="Classes\UpdateEsculap.cs" />
+    <Compile Include="Classes\UpdateHospital.cs" />
+    <Compile Include="Classes\UpdateАкт.cs" />
+    <Compile Include="Classes\UpdateБухгалтер.cs" />
+    <Compile Include="Classes\UpdateДоговор.cs" />
+    <Compile Include="Classes\UpdateЛьготник.cs" />
+    <Compile Include="Classes\Акт.cs" />
+    <Compile Include="Classes\АктНазваниеУслуги.cs" />
+    <Compile Include="Classes\ВидУслуг.cs" />
+    <Compile Include="Classes\ДанныеДоговор.cs" />
+    <Compile Include="Classes\ДанныеПредставление.cs" />
+    <Compile Include="Classes\Договор.cs" />
+    <Compile Include="Classes\ДоговорTable.cs" />
+    <Compile Include="Classes\ЛьготнаяКатегория.cs" />
+    <Compile Include="Classes\Льготник.cs" />
+    <Compile Include="Classes\ОтчётТехЛист.cs" />
+    <Compile Include="Classes\Подпись.cs" />
+    <Compile Include="Classes\Поликлинника.cs" />
+    <Compile Include="Classes\Реестр.cs" />
+    <Compile Include="Classes\РеестрВрачТехЛист.cs" />
+    <Compile Include="Classes\СтрокаДоговор.cs" />
+    <Compile Include="Classes\СуммаПрописью.cs" />
+    <Compile Include="Classes\ТаблицаБД.cs" />
+    <Compile Include="Classes\ТаблицаДоговор.cs" />
+    <Compile Include="Classes\ТипДокумента.cs" />
+    <Compile Include="Classes\УслугиДоговор.cs" />
+    <Compile Include="db1DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db1DataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditEsculap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditEsculap.Designer.cs">
+      <DependentUpon>FormEditEsculap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEditHospital.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditHospital.Designer.cs">
+      <DependentUpon>FormEditHospital.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFindContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFindContract.Designer.cs">
+      <DependentUpon>FormFindContract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHelp.Designer.cs">
+      <DependentUpon>FormHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListContract.Designer.cs">
+      <DependentUpon>FormListContract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListReestr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListReestr.Designer.cs">
+      <DependentUpon>FormListReestr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenu.Designer.cs">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModal.Designer.cs">
+      <DependentUpon>FormModal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPassword.Designer.cs">
+      <DependentUpon>FormPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrintContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrintContract.Designer.cs">
+      <DependentUpon>FormPrintContract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrintТехЛист.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrintТехЛист.Designer.cs">
+      <DependentUpon>FormPrintТехЛист.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProjecContract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProjecContract.Designer.cs">
+      <DependentUpon>FormProjecContract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReestrPrint.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReestrPrint.Designer.cs">
+      <DependentUpon>FormReestrPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormResolution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormResolution.Designer.cs">
+      <DependentUpon>FormResolution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSetDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSetDate.Designer.cs">
+      <DependentUpon>FormSetDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormWeb.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWeb.Designer.cs">
+      <DependentUpon>FormWeb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormАкт.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormАкт.Designer.cs">
+      <DependentUpon>FormАкт.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormБухгалтер.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormБухгалтер.Designer.cs">
+      <DependentUpon>FormБухгалтер.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormВидУслуги.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormВидУслуги.Designer.cs">
+      <DependentUpon>FormВидУслуги.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormВрач.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormВрач.Designer.cs">
+      <DependentUpon>FormВрач.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormДоговор.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormДоговор.Designer.cs">
+      <DependentUpon>FormДоговор.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormКалендарь.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormКалендарь.Designer.cs">
+      <DependentUpon>FormКалендарь.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormКлассификатор.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormКлассификатор.Designer.cs">
+      <DependentUpon>FormКлассификатор.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormЛьготнаяКатегория.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormЛьготнаяКатегория.Designer.cs">
+      <DependentUpon>FormЛьготнаяКатегория.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormЛьготник.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormЛьготник.Designer.cs">
+      <DependentUpon>FormЛьготник.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormНаселПункт.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormНаселПункт.Designer.cs">
+      <DependentUpon>FormНаселПункт.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormПоликлинника.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormПоликлинника.Designer.cs">
+      <DependentUpon>FormПоликлинника.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormРайон.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormРайон.Designer.cs">
+      <DependentUpon>FormРайон.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormТеррОрган.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormТеррОрган.Designer.cs">
+      <DependentUpon>FormТеррОрган.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormТеррОргн.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormТеррОргн.Designer.cs">
+      <DependentUpon>FormТеррОргн.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormУслуги.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormУслуги.Designer.cs">
+      <DependentUpon>FormУслуги.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormШев.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormШев.Designer.cs">
+      <DependentUpon>FormШев.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LgotnikReply.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LgotnikReply.Designer.cs">
+      <DependentUpon>LgotnikReply.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditEsculap.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormEditEsculap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditHospital.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormEditHospital.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFindContract.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormFindContract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHelp.resx">
+      <DependentUpon>FormHelp.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListContract.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormListContract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListReestr.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormListReestr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenu.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModal.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormModal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPassword.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrintContract.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormPrintContract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrintТехЛист.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormPrintТехЛист.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProjecContract.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormProjecContract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReestrPrint.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormReestrPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormResolution.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormResolution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSetDate.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormSetDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormWeb.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormWeb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormАкт.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormАкт.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormБухгалтер.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormБухгалтер.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormВидУслуги.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormВидУслуги.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormВрач.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormВрач.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormДоговор.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormДоговор.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormКалендарь.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormКалендарь.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormКлассификатор.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormКлассификатор.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormЛьготнаяКатегория.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormЛьготнаяКатегория.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormЛьготник.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormЛьготник.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormНаселПункт.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormНаселПункт.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormПоликлинника.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormПоликлинника.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormРайон.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormРайон.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormТеррОрган.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormТеррОрган.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormТеррОргн.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormТеррОргн.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormУслуги.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormУслуги.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormШев.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FormШев.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LgotnikReply.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LgotnikReply.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Документы\app.config" />
+    <None Include="db1DataSet.xsc">
+      <DependentUpon>db1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="db1DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db1DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db1DataSet.xss">
+      <DependentUpon>db1DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Шаблон\Договор.dot" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Classes\CarlosAg.ExcelXmlWriter.dll" />
+    <Content Include="Classes\DocumentFormat.OpenXml.dll" />
+    <Content Include="Classes\ExcelLibrary.dll" />
+    <Content Include="db1.mdb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="smallsuccess.gif" />
+    <Content Include="Temporary-tooth-32x32.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
